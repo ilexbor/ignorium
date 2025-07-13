@@ -1,0 +1,43 @@
+name: ignorium
+
+version: '0.1.0'
+
+license: 'BSD-3-Clause'
+
+repository: https://github.com/ilexbor/ignorium
+
+issue_tracker: https://github.com/ilexbor/ignorium/issues
+
+description: >
+  TODO
+
+executables:
+  ignorium: ignorium
+
+dependencies:
+  args: ^2.7.0
+  collection: ^1.19.1
+  meta: ^1.16.0
+  path: ^1.9.1
+  quiver: ^3.2.2
+  stack_trace: ^1.12.1
+  yaml: ^3.1.3
+
+dev_dependencies:
+  lintorium: ">=30.0.0"
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+topics:
+  - git
+  - gitignore
+  - ignore
