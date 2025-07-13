@@ -1,0 +1,15 @@
+name: ignorium_example
+
+version: 0.0.0
+
+dependencies:
+  ignorium:
+    path: ".."
+
+dev_dependencies:
+  lintorium: ">=30.0.0"
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+publish_to: none
