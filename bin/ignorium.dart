@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:ignorium/src/cli/cli_command_gen.dart';
+import 'package:ignorium/src/cli/cli_command__gen.dart';
 import 'package:ignorium/src/cli/cli_command_runner.dart';
 import 'package:stack_trace/stack_trace.dart';
 
