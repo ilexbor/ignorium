@@ -9,7 +9,8 @@ repository: https://github.com/ilexbor/ignorium
 issue_tracker: https://github.com/ilexbor/ignorium/issues
 
 description: >
-  TODO
+  Ignorium is a CLI tool for automatic .gitignore generation based on detected files and their contents.
+  Ignorium intelligently scans your project directory and generates appropriate .gitignore files based on detected frameworks, build tools, IDEs, and other project characteristics.
 
 executables:
   ignorium: ignorium

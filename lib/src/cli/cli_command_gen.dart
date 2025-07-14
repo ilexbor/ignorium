@@ -10,7 +10,7 @@ class GenCliCommand extends CliCommand {
     argParser.addFlag(
       'recursive',
       abbr: 'r',
-      help: '', // TODO(ilexbor): add description
+      help: 'Scan directories recursively (default: true).',
       defaultsTo: true,
     );
   }
@@ -19,7 +19,7 @@ class GenCliCommand extends CliCommand {
   String get name => 'gen';
 
   @override
-  String get description => 'Generate .gitignore files'; // TODO(ilexbor): add description
+  String get description => 'Generate .gitignore files based on technologies detected in the target directory.';
 
   @override
   Future<void> run() async {
