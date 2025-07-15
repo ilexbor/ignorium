@@ -10,7 +10,7 @@ class GenCliCommand extends CliCommand {
     argParser.addFlag(
       'recursive',
       abbr: 'r',
-      help: 'Scan directories recursively (default: true).',
+      help: 'Scan directories recursively.',
       defaultsTo: true,
     );
   }
