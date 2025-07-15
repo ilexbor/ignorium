@@ -9,7 +9,7 @@
 
 </div>
 
-Ignorium is a CLI tool for automatic .gitignore generation based on detected files and their contents.
+Ignorium is a CLI tool for automatic .gitignore generation based on detected technologies detected in the target directory.
 
 Ignorium intelligently scans your project directory and generates appropriate .gitignore files based on detected frameworks, build tools, IDEs, and other project characteristics.
 
@@ -57,7 +57,7 @@ monorepo/
 │   ├── .idea/
 │   ├── android/
 │   │   ├── app/
-│   │   │   ├── .gitignore        ← Created/Updated rules for Android app + Google services + Gradle
+│   │   │   ├── .gitignore        ← Created/Updated rules for Android, Google services, Gradle
 │   │   │   ├── google-services.json
 │   │   │   └── build.gradle
 │   │   ├── .gitignore            ← Created/Updated rules for Gradle
@@ -65,7 +65,7 @@ monorepo/
 │   │   └── settings.gradle
 │   ├── ios/
 │   │   ├── Runner.xcodeproj/
-│   │   ├── .gitignore            ← Created/Updated rules for iOS + CocoaPods
+│   │   ├── .gitignore            ← Created/Updated rules for iOS, CocoaPods
 │   │   └── Podfile
 │   ├── .gitignore                ← Created/Updated rules for Flutter
 │   └── pubspec.yaml
@@ -131,7 +131,7 @@ Generate .gitignore files for the current directory and all subdirectories:
 ignorium gen
 ```
 
-`-r, --recursive` - scan directories recursively (default: true).
+`-r, --[no-]recursive` - scan directories recursively (default: true).
 
 ## Changelog
 
