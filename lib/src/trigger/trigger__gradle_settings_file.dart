@@ -10,7 +10,7 @@ class TriggerGradleSettingsFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = fileName == 'settings.gradle' || fileName == 'settings.gradle.kts';
+    final isTargetFile = fileName == 'settings.gradle'.toLowerCase() || fileName == 'settings.gradle.kts'.toLowerCase();
 
     if (!isTargetFile) {
       return false;

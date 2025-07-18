@@ -10,7 +10,7 @@ class TriggerFirebaseJsonFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == 'firebase.json');
+    final isTargetFile = (fileName == 'firebase.json'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

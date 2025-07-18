@@ -10,7 +10,7 @@ class TriggerFlutterVersionManagerFvmrcFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == '.fvmrc');
+    final isTargetFile = (fileName == '.fvmrc'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

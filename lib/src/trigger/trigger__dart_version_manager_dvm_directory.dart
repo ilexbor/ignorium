@@ -10,7 +10,7 @@ class TriggerDartVersionManagerDvmDirectory extends TriggerDirectory {
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
-    final isTargetFile = (directoryName == '.dvm');
+    final isTargetFile = (directoryName == '.dvm'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

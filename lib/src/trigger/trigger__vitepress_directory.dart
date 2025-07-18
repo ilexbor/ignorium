@@ -10,7 +10,7 @@ class TriggerVitePressDirectory extends TriggerDirectory {
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
-    final isTargetFile = (directoryName == '.vitepress');
+    final isTargetFile = (directoryName == '.vitepress'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

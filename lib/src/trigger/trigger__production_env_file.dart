@@ -10,7 +10,7 @@ class TriggerProductionEnvFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = fileName == 'production.env' || fileName == 'prod.env';
+    final isTargetFile = fileName == 'production.env'.toLowerCase() || fileName == 'prod.env'.toLowerCase();
 
     if (!isTargetFile) {
       return false;

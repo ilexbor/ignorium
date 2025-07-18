@@ -10,7 +10,7 @@ class TriggerLocalPropertiesFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == 'local.properties');
+    final isTargetFile = (fileName == 'local.properties'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

@@ -10,7 +10,7 @@ class TriggerJetBrainsIdeIdeaDirectory extends TriggerDirectory {
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
-    final isTargetFile = (directoryName == '.idea');
+    final isTargetFile = (directoryName == '.idea'.toLowerCase());
 
     if (!isTargetFile) {
       return false;
