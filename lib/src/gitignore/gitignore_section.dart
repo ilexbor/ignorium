@@ -2,6 +2,7 @@ enum GitignoreSection {
   androidAppProject('Android app project'),
   androidKeyStore('Android KeyStore'),
   cocoapods('CocoaPods'),
+  dartGeneratedFiles('Dart generated files'),
   dartProject('Dart project'),
   dartVersionManager('Dart Version Manager'),
   firebase('Firebase'),

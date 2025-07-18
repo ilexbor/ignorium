@@ -60,6 +60,9 @@ class TriggerFinder {
     final triggers = <TriggerFile>[
       TriggerAndroidKeyStoreFile(file),
       TriggerAndroidManifestFile(file),
+      TriggerCocoaPodsLockFile(file),
+      TriggerCocoaPodsPodFile(file),
+      TriggerDartGeneratedFile(file),
       TriggerFirebaseJsonFile(file),
       TriggerFirebaseRcFile(file),
       TriggerFlutterGeneratedPluginRegistrantAndroidFile(file),

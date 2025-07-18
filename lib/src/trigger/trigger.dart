@@ -9,6 +9,7 @@ part 'trigger__android_keystore_file.dart';
 part 'trigger__android_manifest_file.dart';
 part 'trigger__cocoapods_lock_file.dart';
 part 'trigger__cocoapods_pod_file.dart';
+part 'trigger__dart_generated_file.dart';
 part 'trigger__dart_version_manager_dvm_directory.dart';
 part 'trigger__firebase_json_file.dart';
 part 'trigger__firebase_rc_file.dart';

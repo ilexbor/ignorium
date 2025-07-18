@@ -68,6 +68,9 @@ class GitignoreRuleSetResolver {
       TriggerCocoaPodsPodFile() => [
           const CocoaPodsGitignoreRuleSet(),
         ],
+      TriggerDartGeneratedFile() => [
+          const DartGeneratedFilesGitignoreRuleSet(),
+        ],
       TriggerDartVersionManagerDvmDirectory() => [
           const DartVersionManagerGitignoreRuleSet(),
         ],
