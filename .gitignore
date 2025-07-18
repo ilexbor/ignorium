@@ -9,6 +9,9 @@
 build/
 doc/api/
 
+# [ignorium] [Dart Version Manager]
+.dvm/
+
 # [ignorium] [JetBrains IDE]
 .idea/libraries/
 .idea/dictionaries
