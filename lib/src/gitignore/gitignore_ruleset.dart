@@ -6,6 +6,7 @@ import 'package:ignorium/src/gitignore/gitignore_section.dart';
 part 'gitignore_ruleset__android_app_project.dart';
 part 'gitignore_ruleset__android_keystore_file.dart';
 part 'gitignore_ruleset__cocoapods.dart';
+part 'gitignore_ruleset__dart_generated_files.dart';
 part 'gitignore_ruleset__dart_project.dart';
 part 'gitignore_ruleset__dart_version_manager.dart';
 part 'gitignore_ruleset__firebase.dart';

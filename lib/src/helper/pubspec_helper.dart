@@ -117,4 +117,19 @@ class PubspecHelper {
       return false;
     }
   }
+
+  Directory? findNearestPubspec(Directory directory) {
+    var currentDir = directory;
+    
+    while (currentDir.absolute.path != currentDir.parent.absolute.path) {
+      final pubspecPath = path.join(currentDir.path, 'pubspec.yaml');
+      final pubspecFile = File(pubspecPath);
+      if (pubspecFile.existsSync()) {
+        return currentDir;
+      }
+      currentDir = currentDir.parent;
+    }
+    
+    return null;
+  }
 }
