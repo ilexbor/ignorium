@@ -5,7 +5,7 @@ class TriggerFlutterVersionManagerFvmrcFile extends TriggerFile {
   TriggerFlutterVersionManagerFvmrcFile(super.file);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final filePath = file.absolute.path;
 
     final fileName = path.basename(filePath).toLowerCase();

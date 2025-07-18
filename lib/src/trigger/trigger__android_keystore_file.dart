@@ -5,7 +5,7 @@ class TriggerAndroidKeyStoreFile extends TriggerFile {
   TriggerAndroidKeyStoreFile(super.file);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final filePath = file.absolute.path;
 
     final fileExtension = path.extension(filePath).toLowerCase();

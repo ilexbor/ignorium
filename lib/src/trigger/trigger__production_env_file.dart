@@ -5,7 +5,7 @@ class TriggerProductionEnvFile extends TriggerFile {
   TriggerProductionEnvFile(super.file);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final filePath = file.absolute.path;
 
     final fileName = path.basename(filePath).toLowerCase();

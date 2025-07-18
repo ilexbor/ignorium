@@ -5,7 +5,7 @@ class TriggerVitePressDirectory extends TriggerDirectory {
   TriggerVitePressDirectory(super.directory);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final directoryPath = directory.absolute.path;
 
     final directoryName = path.basename(directoryPath).toLowerCase();
