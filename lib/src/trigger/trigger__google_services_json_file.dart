@@ -10,7 +10,7 @@ class TriggerGoogleServicesJsonFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == 'google-services.json');
+    final isTargetFile = (fileName == 'google-services.json'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

@@ -10,7 +10,7 @@ class TriggerFlutterVersionManagerFvmDirectory extends TriggerDirectory {
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
-    final isTargetFile = (directoryName == '.fvm');
+    final isTargetFile = (directoryName == '.fvm'.toLowerCase());
 
     if (!isTargetFile) {
       return false;

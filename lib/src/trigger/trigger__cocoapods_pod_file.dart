@@ -10,7 +10,7 @@ class TriggerCocoaPodsPodFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    if (fileName == 'Podfile') {
+    if (fileName == 'Podfile'.toLowerCase()) {
       return true;
     }
 

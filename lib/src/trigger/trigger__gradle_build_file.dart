@@ -10,7 +10,7 @@ class TriggerGradleBuildFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = fileName == 'build.gradle' || fileName == 'build.gradle.kts';
+    final isTargetFile = fileName == 'build.gradle'.toLowerCase() || fileName == 'build.gradle.kts'.toLowerCase();
 
     if (!isTargetFile) {
       return false;

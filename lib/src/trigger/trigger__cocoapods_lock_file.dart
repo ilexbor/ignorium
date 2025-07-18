@@ -10,7 +10,7 @@ class TriggerCocoaPodsLockFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    if (fileName == 'Podfile.lock') {
+    if (fileName == 'Podfile.lock'.toLowerCase()) {
       return true;
     }
 

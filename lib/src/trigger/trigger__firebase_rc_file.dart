@@ -10,7 +10,7 @@ class TriggerFirebaseRcFile extends TriggerFile {
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == '.firebaserc');
+    final isTargetFile = (fileName == '.firebaserc'.toLowerCase());
 
     if (!isTargetFile) {
       return false;
