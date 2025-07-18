@@ -2,11 +2,9 @@ name: ignorium_example
 
 version: 0.1.0
 
-dependencies:
+dev_dependencies:
   ignorium:
     path: ".."
-
-dev_dependencies:
   lintorium: ">=30.0.0"
 
 environment:

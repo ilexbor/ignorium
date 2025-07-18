@@ -24,6 +24,7 @@ dependencies:
 
 dev_dependencies:
   lintorium: ">=30.0.0"
+  melos: ^6.3.3
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
