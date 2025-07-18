@@ -5,7 +5,7 @@ class TriggerPubspecFileWithFlutterDependency extends TriggerFile {
   TriggerPubspecFileWithFlutterDependency(super.file);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final pubspecHelper = PubspecHelper();
 
     if (!pubspecHelper.isPubspecFile(file)) {

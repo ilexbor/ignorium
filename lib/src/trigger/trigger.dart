@@ -35,7 +35,7 @@ part 'trigger__xcode_xcodeproj_directory.dart';
 part 'trigger__xcode_xcworkspace_directory.dart';
 
 sealed class Trigger {
-  bool evaluate();
+  Future<bool> evaluate();
 }
 
 sealed class TriggerDirectory extends Trigger {

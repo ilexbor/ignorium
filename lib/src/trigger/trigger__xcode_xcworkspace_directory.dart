@@ -5,7 +5,7 @@ class TriggerXcodeXcworkspaceDirectory extends TriggerDirectory {
   TriggerXcodeXcworkspaceDirectory(super.directory);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final directoryPath = directory.absolute.path;
 
     final extension = path.extension(directoryPath).toLowerCase();

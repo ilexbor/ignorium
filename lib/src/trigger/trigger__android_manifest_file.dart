@@ -5,7 +5,7 @@ class TriggerAndroidManifestFile extends TriggerFile {
   TriggerAndroidManifestFile(super.file);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final filePath = file.absolute.path;
 
     final fileName = path.basename(filePath).toLowerCase();

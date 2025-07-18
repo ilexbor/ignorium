@@ -49,9 +49,11 @@ class TriggerFinder {
       TriggerXcodeXcworkspaceDirectory(directory),
     ];
 
-    final result = triggers.where((trigger) => trigger.evaluate());
+    final futures = triggers.map((trigger) => trigger.evaluate());
 
-    return result;
+    final results = await Future.wait(futures);
+
+    return triggers.indexed.where((element) => results[element.$1]).map((element) => element.$2);
   }
 
   Future<Iterable<Trigger>> _processFile(File file) async {
@@ -75,8 +77,10 @@ class TriggerFinder {
       TriggerPubspecFileWithFlutterDependency(file),
     ];
 
-    final result = triggers.where((trigger) => trigger.evaluate());
+    final futures = triggers.map((trigger) => trigger.evaluate());
 
-    return result;
+    final results = await Future.wait(futures);
+
+    return triggers.indexed.where((element) => results[element.$1]).map((element) => element.$2);
   }
 }

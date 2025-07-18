@@ -5,7 +5,7 @@ class TriggerFlutterGeneratedPluginRegistrantIosFile extends TriggerFile {
   TriggerFlutterGeneratedPluginRegistrantIosFile(super.file);
 
   @override
-  bool evaluate() {
+  Future<bool> evaluate() async {
     final filePath = file.absolute.path;
 
     final canonicalizePath = path.canonicalize(filePath).replaceAll(r'\', '/').toLowerCase();
