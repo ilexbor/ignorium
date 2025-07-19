@@ -1,7 +1,8 @@
 import 'package:ignorium/src/gitignore/gitignore_ruleset.dart';
 
 class GitignoreBuffer {
-  Iterable<GitignoreRuleSet> ruleSets = [];
+  Iterable<GitignoreRuleSet> autoGenerateRuleSets = [];
 
-  final userContent = StringBuffer();
+  final userContentBeforeAutoGenerateSection = StringBuffer();
+  final userContentAfterAutoGenerateSection = StringBuffer();
 }
