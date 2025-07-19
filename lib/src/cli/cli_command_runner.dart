@@ -6,6 +6,6 @@ class CliCommandRunner extends CommandRunner<void> {
           'ignorium',
           '''
 
-Ignorium is a CLI tool for automatic .gitignore generation based on detected technologies detected in the target directory.''',
+Ignorium is a CLI tool for automatic .gitignore generation based on technologies detected in the target directory.''',
         );
 }
