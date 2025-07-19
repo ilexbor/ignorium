@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:ignorium/src/gitignore/gitignore_ruleset.dart';
-import 'package:ignorium/src/helper/collection_extension.dart';
+import 'package:ignorium/src/iterable/iterable_extension.dart';
 import 'package:ignorium/src/trigger/trigger.dart';
 
 class GitignoreRuleSetResolver {
