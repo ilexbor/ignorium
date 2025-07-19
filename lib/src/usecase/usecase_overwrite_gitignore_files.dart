@@ -57,7 +57,7 @@ class OverwriteGitignoreFilesUseCase implements UseCase<void> {
 
       final ruleSets = _resolveRuleSets(directoryPath, directoryToTriggerMap);
 
-      buffer.ruleSets = ruleSets;
+      buffer.autoGenerateRuleSets = ruleSets;
 
       await _writeBufferToGitignoreFile(buffer, directoryPath);
     }
