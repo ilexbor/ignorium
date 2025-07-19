@@ -10,7 +10,7 @@ build/
 doc/api/
 
 # [ignorium] [Dart Version Manager]
-.dvm/
+.dvm/dart_sdk
 
 # [ignorium] [JetBrains IDE]
 .idea/libraries/

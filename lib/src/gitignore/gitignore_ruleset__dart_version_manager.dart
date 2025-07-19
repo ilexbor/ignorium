@@ -6,6 +6,6 @@ class DartVersionManagerGitignoreRuleSet extends GitignoreRuleSet {
   static const GitignoreSection _section = GitignoreSection.dartVersionManager;
 
   static const _rules = <GitignoreRule>[
-    GitignoreRule(rule: '.dvm/'),
+    GitignoreRule(rule: '.dvm/dart_sdk'),
   ];
 }
