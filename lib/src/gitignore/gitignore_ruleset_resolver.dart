@@ -122,7 +122,9 @@ class GitignoreRuleSetResolver {
       TriggerPubspecFile() => [
           const DartProjectGitignoreRuleSet(),
         ],
-      TriggerPubspecFileWithBuildRunnerDependency() => [], // TODO(ilexbor): Add RuleSet
+      TriggerPubspecFileWithBuildRunnerDependency() => [
+          const DartGeneratedFilesGitignoreRuleSet(),
+        ],
       TriggerPubspecFileWithFlutterDependency() => [
           const DartProjectGitignoreRuleSet(),
           const FlutterRootProjectGitignoreRuleSet(),
