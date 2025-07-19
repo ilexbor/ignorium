@@ -6,7 +6,7 @@ class TriggerFlutterProjectAndroidDirectory extends TriggerDirectory {
 
   @override
   Future<bool> evaluate() async {
-    final directoryPath = directory.absolute.path;
+    final directoryPath = path.normalize(directory.absolute.path);
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 

@@ -6,16 +6,14 @@ class TriggerGradleBuildFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = fileName == 'build.gradle'.toLowerCase() || fileName == 'build.gradle.kts'.toLowerCase();
-
-    if (!isTargetFile) {
-      return false;
+    if (fileName == 'build.gradle' || fileName == 'build.gradle.kts') {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

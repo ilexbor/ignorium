@@ -10,10 +10,6 @@ class TriggerPubspecFile extends TriggerFile {
 
     final isPubspecFile = pubspecHelper.isPubspecFile(file);
 
-    if (!isPubspecFile) {
-      return false;
-    }
-
-    return true;
+    return isPubspecFile;
   }
 }

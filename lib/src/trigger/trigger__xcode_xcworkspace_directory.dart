@@ -6,7 +6,7 @@ class TriggerXcodeXcworkspaceDirectory extends TriggerDirectory {
 
   @override
   Future<bool> evaluate() async {
-    final directoryPath = directory.absolute.path;
+    final directoryPath = path.normalize(directory.absolute.path);
 
     final extension = path.extension(directoryPath).toLowerCase();
 
@@ -14,7 +14,7 @@ class TriggerXcodeXcworkspaceDirectory extends TriggerDirectory {
       return false;
     }
 
-    final dirname = path.dirname(directoryPath);
+    final dirname = path.dirname(directoryPath).toLowerCase();
 
     if (dirname.endsWith('.xcodeproj')) {
       return false;

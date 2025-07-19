@@ -6,16 +6,14 @@ class TriggerVitePressDirectory extends TriggerDirectory {
 
   @override
   Future<bool> evaluate() async {
-    final directoryPath = directory.absolute.path;
+    final directoryPath = path.normalize(directory.absolute.path);
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
-    final isTargetFile = (directoryName == '.vitepress'.toLowerCase());
-
-    if (!isTargetFile) {
-      return false;
+    if (directoryName == '.vitepress') {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

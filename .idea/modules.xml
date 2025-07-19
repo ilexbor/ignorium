@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/melos_ignorium.iml" filepath="$PROJECT_DIR$/melos_ignorium.iml" />
-      <module fileurl="file://$PROJECT_DIR$/example/melos_ignorium_example.iml" filepath="$PROJECT_DIR$/example/melos_ignorium_example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/melos_ignorium.iml" filepath="$PROJECT_DIR$/melos_ignorium.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ignorium.iml" filepath="$PROJECT_DIR$/.idea/ignorium.iml" />
     </modules>
   </component>
 </project>

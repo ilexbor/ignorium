@@ -6,16 +6,14 @@ class TriggerDartVersionManagerDvmDirectory extends TriggerDirectory {
 
   @override
   Future<bool> evaluate() async {
-    final directoryPath = directory.absolute.path;
+    final directoryPath = path.normalize(directory.absolute.path);
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
-    final isTargetFile = (directoryName == '.dvm'.toLowerCase());
-
-    if (!isTargetFile) {
-      return false;
+    if (directoryName == '.dvm') {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

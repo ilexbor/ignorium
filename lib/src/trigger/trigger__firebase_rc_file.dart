@@ -6,16 +6,14 @@ class TriggerFirebaseRcFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == '.firebaserc'.toLowerCase());
-
-    if (!isTargetFile) {
-      return false;
+    if (fileName == '.firebaserc') {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }
