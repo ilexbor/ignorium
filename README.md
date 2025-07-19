@@ -13,6 +13,8 @@ Ignorium is a CLI tool for automatic .gitignore generation based on technologies
 
 Ignorium intelligently scans your project directory and generates appropriate .gitignore files based on detected frameworks, build tools, IDEs, and other project characteristics.
 
+---
+
 ## Table of contents
 
 - [Features](#features)
@@ -26,6 +28,8 @@ Ignorium intelligently scans your project directory and generates appropriate .g
 - [Contributing](#contributing)
 - [License](#license)
 
+---
+
 ## Features
 
 - 🔍 **Intelligent Detection**: Automatically detects project types based on files and directories
@@ -36,14 +40,18 @@ Ignorium intelligently scans your project directory and generates appropriate .g
 - 🔄 **Recursive Processing**: Can process entire project hierarchies
 - 📦 **Zero Configuration**: Works out of the box without setup
 
+---
+
 ## How it works
+
+### Algorithm
 
 1. **Scan**: Ignorium scans your project directory
 2. **Detect**: Identifies what technologies you're using by analyzing project files and folders
 3. **Generate**: Creates appropriate .gitignore rules for detected technologies
 4. **Preserve**: Maintains your existing custom rules while updating auto-generated sections in .gitignore files
 
-## Example
+### Example
 
 Ignorium automatically detects your project structure and creates or updates .gitignore files in appropriate locations:
 
@@ -74,6 +82,10 @@ monorepo/
 ```
 
 Each .gitignore file contains rules specific to that directory's detected technologies, while preserving your existing custom rules.
+
+---
+
+## Supported Technologies
 
 Ignorium automatically detects and generates .gitignore rules for:
 
@@ -117,13 +129,26 @@ Ignorium automatically detects and generates .gitignore rules for:
 ### Operating Systems
 - macOS
 
+---
+
 ## Installation
+
+### Using Homebrew (macOS/Linux)
+
+```shell
+brew tap ilexbor/tap
+brew install ignorium
+```
+
+### Using Dart Pub
 
 Install the package globally by running:
 
 ```shell
 dart pub global activate --overwrite ignorium
 ```
+
+---
 
 ## Usage
 
@@ -135,9 +160,13 @@ ignorium gen
 
 `-r, --[no-]recursive` - scan directories recursively (default: true).
 
+---
+
 ## Changelog
 
 For a full list of changes and updates, see the [CHANGELOG.md](CHANGELOG.md).
+
+---
 
 ## Issues
 
@@ -153,12 +182,16 @@ Including the following information is highly appreciated:
 
 Your feedback is valuable and will help improve the package!
 
+---
+
 ## Contributing
 
 Contributions are welcome!  
 Please [fork this repository](https://github.com/ilexbor/ignorium/fork) and [submit pull requests](https://github.com/ilexbor/ignorium/pulls).
 
 By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
+
+---
 
 ## License
 
