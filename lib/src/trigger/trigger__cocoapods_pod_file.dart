@@ -6,7 +6,7 @@ class TriggerCocoaPodsPodFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 

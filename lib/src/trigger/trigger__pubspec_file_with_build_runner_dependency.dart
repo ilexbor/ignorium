@@ -14,12 +14,10 @@ class TriggerPubspecFileWithBuildRunnerDependency extends TriggerFile {
 
     final dependency = pubspecHelper.getDevDependencyFromPubspecFile<String>(file, 'build_runner');
 
-    final hasDependency = dependency != null;
-
-    if (!hasDependency) {
-      return false;
+    if (dependency != null) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

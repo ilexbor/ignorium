@@ -6,16 +6,14 @@ class TriggerProductionEnvFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = fileName == 'production.env'.toLowerCase() || fileName == 'prod.env'.toLowerCase();
-
-    if (!isTargetFile) {
-      return false;
+    if (fileName == 'production.env' || fileName == 'prod.env') {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

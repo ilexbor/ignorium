@@ -6,19 +6,15 @@ class TriggerFlutterGeneratedPluginRegistrantIosFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path).toLowerCase();
 
-    final canonicalizePath = path.canonicalize(filePath).replaceAll(r'\', '/').toLowerCase();
+    final suffixH = path.normalize('/ios/Runner/GeneratedPluginRegistrant.h').toLowerCase();
+    final suffixM = path.normalize('/ios/Runner/GeneratedPluginRegistrant.m').toLowerCase();
 
-    final suffixH = '/ios/Runner/GeneratedPluginRegistrant.h'.toLowerCase();
-    final suffixM = '/ios/Runner/GeneratedPluginRegistrant.m'.toLowerCase();
-
-    final isEndWithSuffix = canonicalizePath.endsWith(suffixH) || canonicalizePath.endsWith(suffixM);
-
-    if (!isEndWithSuffix) {
-      return false;
+    if (filePath.endsWith(suffixH) || filePath.endsWith(suffixM)) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

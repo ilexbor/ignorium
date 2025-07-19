@@ -6,16 +6,14 @@ class TriggerGoogleServicesInfoPlistFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == 'GoogleService-Info.plist'.toLowerCase());
-
-    if (!isTargetFile) {
-      return false;
+    if (fileName == 'GoogleService-Info.plist'.toLowerCase()) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

@@ -6,7 +6,7 @@ class TriggerIntlUtilsIntlDirectory extends TriggerDirectory {
 
   @override
   Future<bool> evaluate() async {
-    final directoryPath = directory.absolute.path;
+    final directoryPath = path.normalize(directory.absolute.path);
 
     final directoryName = path.basename(directoryPath).toLowerCase();
 
@@ -23,7 +23,7 @@ class TriggerIntlUtilsIntlDirectory extends TriggerDirectory {
 
       final file = fileSystemEntity;
 
-      final filePath = file.absolute.path;
+      final filePath = path.normalize(file.absolute.path);
 
       final fileName = path.basename(filePath).toLowerCase();
 
@@ -40,12 +40,10 @@ class TriggerIntlUtilsIntlDirectory extends TriggerDirectory {
       return true;
     });
 
-    final hasGeneratedFile = (generatedFile != null);
-
-    if (!hasGeneratedFile) {
-      return false;
+    if (generatedFile != null) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

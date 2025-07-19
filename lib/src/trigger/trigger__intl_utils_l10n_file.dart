@@ -6,7 +6,7 @@ class TriggerIntlUtilsL10nFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 
@@ -18,10 +18,10 @@ class TriggerIntlUtilsL10nFile extends TriggerFile {
 
     final hasComments = content.contains('// GENERATED CODE - DO NOT MODIFY BY HAND') && content.contains('// Generator: Flutter Intl IDE plugin');
 
-    if (!hasComments) {
-      return false;
+    if (hasComments) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

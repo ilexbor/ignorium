@@ -14,10 +14,6 @@ class TriggerPubspecFileWithFlutterDependency extends TriggerFile {
 
     final hasDependency = pubspecHelper.hasFlutterDependencyInPubspecFile(file);
 
-    if (!hasDependency) {
-      return false;
-    }
-
-    return true;
+    return hasDependency;
   }
 }

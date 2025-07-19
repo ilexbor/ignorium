@@ -6,14 +6,14 @@ class TriggerXcodeXcodeprojDirectory extends TriggerDirectory {
 
   @override
   Future<bool> evaluate() async {
-    final directoryPath = directory.absolute.path;
+    final directoryPath = path.normalize(directory.absolute.path);
 
     final extension = path.extension(directoryPath).toLowerCase();
 
-    if (extension != '.xcodeproj') {
-      return false;
+    if (extension == '.xcodeproj') {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

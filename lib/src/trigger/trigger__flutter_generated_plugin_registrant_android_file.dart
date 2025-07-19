@@ -6,18 +6,14 @@ class TriggerFlutterGeneratedPluginRegistrantAndroidFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path).toLowerCase();
 
-    final canonicalizePath = path.canonicalize(filePath).replaceAll(r'\', '/').toLowerCase();
+    final suffix = path.normalize('/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java').toLowerCase();
 
-    final suffix = '/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java'.toLowerCase();
-
-    final isEndWithSuffix = canonicalizePath.endsWith(suffix);
-
-    if (!isEndWithSuffix) {
-      return false;
+    if (filePath.endsWith(suffix)) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }

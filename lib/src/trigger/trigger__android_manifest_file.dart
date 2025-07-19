@@ -6,16 +6,14 @@ class TriggerAndroidManifestFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final filePath = file.absolute.path;
+    final filePath = path.normalize(file.absolute.path);
 
     final fileName = path.basename(filePath).toLowerCase();
 
-    final isTargetFile = (fileName == 'AndroidManifest.xml'.toLowerCase());
-
-    if (!isTargetFile) {
-      return false;
+    if (fileName == 'AndroidManifest.xml'.toLowerCase()) {
+      return true;
     }
 
-    return true;
+    return false;
   }
 }
