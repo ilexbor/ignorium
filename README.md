@@ -9,7 +9,7 @@
 
 </div>
 
-Ignorium is a CLI tool for automatic .gitignore generation based on detected technologies detected in the target directory.
+Ignorium is a CLI tool for automatic .gitignore generation based on technologies detected in the target directory.
 
 Ignorium intelligently scans your project directory and generates appropriate .gitignore files based on detected frameworks, build tools, IDEs, and other project characteristics.
 
