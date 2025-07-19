@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:ignorium/src/gitignore/gitignore_helper.dart';
-import 'package:ignorium/src/helper/pubspec_helper.dart';
+import 'package:ignorium/src/gitignore/gitignore_finder.dart';
+import 'package:ignorium/src/pubspec/pubspec_utils.dart';
 import 'package:ignorium/src/trigger/trigger.dart';
 
 class GitignoreDirectoryFinder {
@@ -24,17 +24,17 @@ class GitignoreDirectoryFinder {
       TriggerCocoaPodsLockFile() => trigger.file.parent,
       TriggerCocoaPodsPodFile() => trigger.file.parent,
       TriggerDartGeneratedFile() => () {
-          final pubspecHelper = PubspecHelper();
-          final gitignoreHelper = GitignoreHelper();
+          final pubspecHelper = PubspecUtils();
+          final gitignoreHelper = GitignoreFinder();
 
-          final pubspecDirectory = pubspecHelper.findNearestPubspec(trigger.file.parent);
-          if (pubspecDirectory != null) {
-            return pubspecDirectory;
+          final pubspecFile = pubspecHelper.findNearestPubspecFileUpwards(trigger.file.parent);
+          if (pubspecFile != null) {
+            return pubspecFile.parent;
           }
 
-          final gitignoreDirectory = gitignoreHelper.findNearestGitignore(trigger.file.parent);
-          if (gitignoreDirectory != null) {
-            return gitignoreDirectory;
+          final gitignoreFile = gitignoreHelper.findNearestGitignoreUpwards(trigger.file.parent);
+          if (gitignoreFile != null) {
+            return gitignoreFile.parent;
           }
 
           return trigger.file.parent;

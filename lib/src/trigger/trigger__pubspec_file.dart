@@ -6,7 +6,7 @@ class TriggerPubspecFile extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final pubspecHelper = PubspecHelper();
+    final pubspecHelper = PubspecUtils();
 
     final isPubspecFile = pubspecHelper.isPubspecFile(file);
 

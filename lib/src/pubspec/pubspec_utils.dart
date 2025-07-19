@@ -6,10 +6,10 @@ import 'package:collection/collection.dart';
 import 'package:path/path.dart' as path;
 import 'package:yaml/yaml.dart';
 
-class PubspecHelper {
+class PubspecUtils {
   bool isPubspecFile(File file) {
     try {
-      final filePath = file.absolute.path;
+      final filePath = path.normalize(file.absolute.path);
 
       final fileName = path.basename(filePath).toLowerCase();
 
@@ -23,7 +23,7 @@ class PubspecHelper {
     }
   }
 
-  File? getPubspecFileInDirectory({required Directory directory, bool recursive = false}) {
+  File? findFirstPubspecFileDownwards({required Directory directory, bool recursive = false}) {
     try {
       final fileSystemEntities = directory.listSync(
         recursive: recursive,
@@ -50,7 +50,33 @@ class PubspecHelper {
     }
   }
 
-  T? getDependencyFromPubspecFile<T>(File file, String dependencyName) {
+  File? findNearestPubspecFileUpwards(Directory directory) {
+    var loopDirectory = directory;
+
+    while (true) {
+      final directoryPath = path.normalize(loopDirectory.absolute.path);
+
+      final gitignoreFilePath = path.join(directoryPath, 'pubspec.yaml');
+      final gitignoreFile = File(gitignoreFilePath);
+
+      if (gitignoreFile.existsSync()) {
+        return gitignoreFile;
+      }
+
+      final parentDirectory = loopDirectory.parent;
+      final parentDirectoryPath = path.normalize(parentDirectory.absolute.path);
+
+      if (path.equals(directoryPath, parentDirectoryPath)) {
+        break;
+      }
+
+      loopDirectory = parentDirectory;
+    }
+
+    return null;
+  }
+
+  T? findDependencyInPubspecFile<T>(File file, String dependencyName) {
     try {
       final fileContent = file.readAsStringSync();
 
@@ -74,7 +100,7 @@ class PubspecHelper {
     }
   }
 
-  T? getDevDependencyFromPubspecFile<T>(File file, String dependencyName) {
+  T? findDevDependencyInPubspecFile<T>(File file, String dependencyName) {
     try {
       final fileContent = file.readAsStringSync();
 
@@ -100,7 +126,7 @@ class PubspecHelper {
 
   bool hasFlutterDependencyInPubspecFile(File file) {
     try {
-      final flutterDependency = getDependencyFromPubspecFile<YamlMap>(file, 'flutter');
+      final flutterDependency = findDependencyInPubspecFile<YamlMap>(file, 'flutter');
 
       if (flutterDependency == null) {
         return false;
@@ -116,20 +142,5 @@ class PubspecHelper {
     on Error {
       return false;
     }
-  }
-
-  Directory? findNearestPubspec(Directory directory) {
-    var currentDir = directory;
-    
-    while (currentDir.absolute.path != currentDir.parent.absolute.path) {
-      final pubspecPath = path.join(currentDir.path, 'pubspec.yaml');
-      final pubspecFile = File(pubspecPath);
-      if (pubspecFile.existsSync()) {
-        return currentDir;
-      }
-      currentDir = currentDir.parent;
-    }
-    
-    return null;
   }
 }

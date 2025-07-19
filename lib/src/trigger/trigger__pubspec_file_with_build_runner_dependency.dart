@@ -6,13 +6,13 @@ class TriggerPubspecFileWithBuildRunnerDependency extends TriggerFile {
 
   @override
   Future<bool> evaluate() async {
-    final pubspecHelper = PubspecHelper();
+    final pubspecHelper = PubspecUtils();
 
     if (!pubspecHelper.isPubspecFile(file)) {
       return false;
     }
 
-    final dependency = pubspecHelper.getDevDependencyFromPubspecFile<String>(file, 'build_runner');
+    final dependency = pubspecHelper.findDevDependencyInPubspecFile<String>(file, 'build_runner');
 
     if (dependency != null) {
       return true;
