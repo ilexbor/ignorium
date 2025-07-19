@@ -75,8 +75,6 @@ monorepo/
 
 Each .gitignore file contains rules specific to that directory's detected technologies, while preserving your existing custom rules.
 
-## Supported Technologies
-
 Ignorium automatically detects and generates .gitignore rules for:
 
 ### Programming Languages & Frameworks
@@ -86,28 +84,32 @@ Ignorium automatically detects and generates .gitignore rules for:
 ### Build Systems & Package Managers
 - CocoaPods
 - Gradle
+- Pub
 
 ### IDEs & Code Editors
 - JetBrains IDEs
 - Visual Studio Code
 - Xcode
 
-### Mobile Development
+### Mobile Development projects
 - Android app
 - Android key store files
 - iOS app
+
+### Documentation Tools
+- Dart documentation
+- VitePress
 
 ### Version Managers
 - Dart Version Manager (DVM)
 - Flutter Version Manager (FVM)
 
-### Documentation
-- Dart documentation
-- VitePress
-
 ### Services
 - Firebase
 - Google Services
+
+### Auto-generated files
+- *.dart files (build_runner, etc.)
 
 ### User specific files
 - Local properties files
