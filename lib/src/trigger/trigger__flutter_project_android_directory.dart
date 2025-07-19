@@ -16,9 +16,9 @@ class TriggerFlutterProjectAndroidDirectory extends TriggerDirectory {
 
     final parentDirectory = directory.parent;
 
-    final pubspecHelper = PubspecHelper();
+    final pubspecHelper = PubspecUtils();
 
-    final pubspecFile = pubspecHelper.getPubspecFileInDirectory(directory: parentDirectory);
+    final pubspecFile = pubspecHelper.findFirstPubspecFileDownwards(directory: parentDirectory);
 
     if (pubspecFile == null) {
       return false;

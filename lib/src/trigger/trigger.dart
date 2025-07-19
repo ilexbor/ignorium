@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:collection/collection.dart';
-import 'package:ignorium/src/helper/pubspec_helper.dart';
+import 'package:ignorium/src/pubspec/pubspec_utils.dart';
 import 'package:meta/meta.dart';
 import 'package:path/path.dart' as path;
 
