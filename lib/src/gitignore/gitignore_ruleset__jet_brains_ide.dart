@@ -24,5 +24,7 @@ class JetBrainsIdeGitignoreRuleSet extends GitignoreRuleSet {
     GitignoreRule(rule: '.idea/dynamic.xml'),
     GitignoreRule(rule: '.idea/uiDesigner.xml'),
     GitignoreRule(rule: '.idea/dbnavigator.xml'),
+    // Cache files
+    GitignoreRule(rule: '.idea/caches/'),
   ];
 }
