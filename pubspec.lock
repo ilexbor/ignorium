@@ -125,18 +125,18 @@ packages:
     dependency: transitive
     description:
       name: json_annotation
-      sha256: "1ce844379ca14835a50d2f019a3099f419082cfdd231cd86a142af94dd5c6bb1"
+      sha256: "805fa86df56383000f640384b282ce0cb8431f1a7a2396de92fb66186d8c57df"
       url: "https://pub.dev"
     source: hosted
-    version: "4.9.0"
+    version: "4.10.0"
   lintorium:
     dependency: "direct dev"
     description:
       name: lintorium
-      sha256: fcaf2e4e5a4f8d7da423ee8ed897302e53ddb3cac2c86862fc672dc12284b6c0
+      sha256: "37ddce2a2882a6b716fbd6a78784bef534a7b948a96b88952c5b9c161a6daef2"
       url: "https://pub.dev"
     source: hosted
-    version: "310.0.0"
+    version: "311.0.0"
   melos:
     dependency: "direct dev"
     description:
@@ -149,18 +149,18 @@ packages:
     dependency: "direct main"
     description:
       name: meta
-      sha256: "23f08335362185a5ea2ad3a4e597f1375e78bce8a040df5c600c8d3552ef2394"
+      sha256: "9f29b9bcc8ee287b1a31e0d01be0eae99a930dbffdaecf04b3f3d82a969f296f"
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.0"
+    version: "1.18.1"
   mustache_template:
     dependency: transitive
     description:
       name: mustache_template
-      sha256: daa42be75f2ccfb287c24a75e7ac594f2ea0b32bf9ebe7c15154aa45b2dfb2de
+      sha256: "4326d0002ff58c74b9486990ccbdab08157fca3c996fe9e197aff9d61badf307"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   path:
     dependency: "direct main"
     description:
@@ -229,10 +229,10 @@ packages:
     dependency: transitive
     description:
       name: source_span
-      sha256: "254ee5351d6cb365c859e20ee823c3bb479bf4a293c22d17a9f1bf144ce86f7c"
+      sha256: "56a02f1f4cd1a2d96303c0144c93bd6d909eea6bee6bf5a0e0b685edbd4c47ab"
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.1"
+    version: "1.10.2"
   stack_trace:
     dependency: "direct main"
     description:
@@ -290,4 +290,4 @@ packages:
     source: hosted
     version: "2.2.3"
 sdks:
-  dart: ">=3.10.0 <4.0.0"
+  dart: ">=3.11.0 <4.0.0"
