@@ -24,21 +24,21 @@ class GitignoreDirectoryFinder {
       TriggerCocoaPodsLockFile() => trigger.file.parent,
       TriggerCocoaPodsPodFile() => trigger.file.parent,
       TriggerDartGeneratedFile() => () {
-          final pubspecHelper = PubspecUtils();
-          final gitignoreHelper = GitignoreFinder();
+        final pubspecHelper = PubspecUtils();
+        final gitignoreHelper = GitignoreFinder();
 
-          final pubspecFile = pubspecHelper.findNearestPubspecFileUpwards(trigger.file.parent);
-          if (pubspecFile != null) {
-            return pubspecFile.parent;
-          }
+        final pubspecFile = pubspecHelper.findNearestPubspecFileUpwards(trigger.file.parent);
+        if (pubspecFile != null) {
+          return pubspecFile.parent;
+        }
 
-          final gitignoreFile = gitignoreHelper.findNearestGitignoreUpwards(trigger.file.parent);
-          if (gitignoreFile != null) {
-            return gitignoreFile.parent;
-          }
+        final gitignoreFile = gitignoreHelper.findNearestGitignoreUpwards(trigger.file.parent);
+        if (gitignoreFile != null) {
+          return gitignoreFile.parent;
+        }
 
-          return trigger.file.parent;
-        }.call(),
+        return trigger.file.parent;
+      }.call(),
       TriggerDartVersionManagerDvmDirectory() => trigger.directory.parent,
       TriggerFirebaseJsonFile() => trigger.file.parent,
       TriggerFirebaseRcFile() => trigger.file.parent,

@@ -7,12 +7,7 @@ import 'package:path/path.dart' as path;
 
 class GenCliCommand extends CliCommand {
   GenCliCommand() {
-    argParser.addFlag(
-      'recursive',
-      abbr: 'r',
-      help: 'Scan directories recursively.',
-      defaultsTo: true,
-    );
+    argParser.addFlag('recursive', abbr: 'r', help: 'Scan directories recursively.', defaultsTo: true);
   }
 
   @override
@@ -33,10 +28,7 @@ class GenCliCommand extends CliCommand {
 
     final recursive = args.flag('recursive');
 
-    await OverwriteGitignoreFilesUseCase(
-      searchDirectory: searchDirectory,
-      recursive: recursive,
-    ).call();
+    await OverwriteGitignoreFilesUseCase(searchDirectory: searchDirectory, recursive: recursive).call();
   }
 
   Directory _parseSearchDirectoryPath(List<String> rest) {

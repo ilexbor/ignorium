@@ -5,9 +5,7 @@ import 'package:ignorium/src/gitignore/gitignore_buffer.dart';
 import 'package:ignorium/src/gitignore/gitignore_buffer_deserializer.dart';
 
 class GitignoreFileReader {
-  GitignoreFileReader({
-    GitignoreBufferDeserializer? deserializer,
-  }) : _deserializer = deserializer ?? GitignoreBufferDeserializer();
+  GitignoreFileReader({GitignoreBufferDeserializer? deserializer}) : _deserializer = deserializer ?? GitignoreBufferDeserializer();
 
   final GitignoreBufferDeserializer _deserializer;
 

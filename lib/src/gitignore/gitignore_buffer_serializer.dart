@@ -5,9 +5,7 @@ import 'package:ignorium/src/gitignore/gitignore_ruleset.dart';
 import 'package:ignorium/src/gitignore/gitignore_section.dart';
 
 class GitignoreBufferSerializer {
-  GitignoreBufferSerializer({
-    GitignoreCodec? codec,
-  }) : _codec = codec ?? GitignoreCodec();
+  GitignoreBufferSerializer({GitignoreCodec? codec}) : _codec = codec ?? GitignoreCodec();
 
   final GitignoreCodec _codec;
 

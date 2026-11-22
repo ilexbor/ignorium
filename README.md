@@ -133,19 +133,18 @@ Ignorium automatically detects and generates .gitignore rules for:
 
 ## Installation
 
+### Using Dart
+
+Requires Dart 3.10 or later. Install the package globally by running:
+
+```shell
+dart install ignorium
+```
+
 ### Using Homebrew (macOS/Linux)
 
 ```shell
-brew tap ilexbor/tap
-brew install ignorium
-```
-
-### Using Dart Pub
-
-Install the package globally by running:
-
-```shell
-dart pub global activate --overwrite ignorium
+brew install ilexbor/tap/ignorium
 ```
 
 ---

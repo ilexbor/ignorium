@@ -8,16 +8,10 @@ import 'package:meta/meta.dart';
 class TriggerFinder {
   const TriggerFinder();
 
-  Future<List<Trigger>> call({
-    required Directory directory,
-    bool recursive = false,
-  }) async {
+  Future<List<Trigger>> call({required Directory directory, bool recursive = false}) async {
     final triggers = <Trigger>[];
 
-    final fileSystemEntitiesStream = directory.list(
-      recursive: recursive,
-      followLinks: false,
-    );
+    final fileSystemEntitiesStream = directory.list(recursive: recursive, followLinks: false);
 
     await for (final fileSystemEntity in fileSystemEntitiesStream) {
       final foundTriggers = await _processFileSystemEntity(fileSystemEntity);
@@ -31,7 +25,7 @@ class TriggerFinder {
     return switch (fileSystemEntity) {
       Directory() => _processDirectory(fileSystemEntity),
       File() => _processFile(fileSystemEntity),
-      Link() => Future.value([]),
+      Link() => Future.syncValue([]),
       _ => throw UnimplementedError(),
     };
   }

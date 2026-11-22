@@ -1,4 +1,4 @@
-part of '../gitignore/gitignore_ruleset.dart';
+part of 'gitignore_ruleset.dart';
 
 class XcodeProjectGitignoreRuleSet extends GitignoreRuleSet {
   const XcodeProjectGitignoreRuleSet() : super(_section, _rules);

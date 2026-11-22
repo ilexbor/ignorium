@@ -1,4 +1,4 @@
-part of '../gitignore/gitignore_ruleset.dart';
+part of 'gitignore_ruleset.dart';
 
 class DartGeneratedFilesGitignoreRuleSet extends GitignoreRuleSet {
   const DartGeneratedFilesGitignoreRuleSet() : super(_section, _rules);

@@ -25,20 +25,19 @@ class PubspecUtils {
 
   File? findFirstPubspecFileDownwards({required Directory directory, bool recursive = false}) {
     try {
-      final fileSystemEntities = directory.listSync(
-        recursive: recursive,
-        followLinks: false,
-      );
+      final fileSystemEntities = directory.listSync(recursive: recursive, followLinks: false);
 
-      final pubspecFile = fileSystemEntities.firstWhereOrNull((fileSystemEntity) {
-        if (fileSystemEntity is! File) {
-          return false;
-        }
+      final pubspecFile =
+          fileSystemEntities.firstWhereOrNull((fileSystemEntity) {
+                if (fileSystemEntity is! File) {
+                  return false;
+                }
 
-        final file = fileSystemEntity;
+                final file = fileSystemEntity;
 
-        return isPubspecFile(file);
-      }) as File?;
+                return isPubspecFile(file);
+              })
+              as File?;
 
       return pubspecFile;
     } on Exception {

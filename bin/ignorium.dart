@@ -7,12 +7,7 @@ import 'package:ignorium/src/cli/cli_command_runner.dart';
 import 'package:stack_trace/stack_trace.dart';
 
 void main(List<String> args) {
-  Chain.capture(
-    () => unawaited(
-      _runApp(args),
-    ),
-    onError: _handleError,
-  );
+  Chain.capture(() => unawaited(_runApp(args)), onError: _handleError);
 }
 
 Future<void> _runApp(List<String> args) async {

@@ -1,9 +1,17 @@
 ## Installation
 
-Install the package globally by running:
+### Using Dart
+
+Requires Dart 3.10 or later. Install the package globally by running:
 
 ```shell
-dart pub global activate --overwrite ignorium
+dart install ignorium
+```
+
+### Using Homebrew (macOS/Linux)
+
+```shell
+brew install ilexbor/tap/ignorium
 ```
 
 ## Usage

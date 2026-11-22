@@ -28,9 +28,7 @@ import 'package:ignorium/src/gitignore/gitignore_codec.dart';
 // user-rule-4
 
 class GitignoreBufferDeserializer {
-  GitignoreBufferDeserializer({
-    GitignoreCodec? codec,
-  }) : _codec = codec ?? GitignoreCodec();
+  GitignoreBufferDeserializer({GitignoreCodec? codec}) : _codec = codec ?? GitignoreCodec();
 
   final GitignoreCodec _codec;
 

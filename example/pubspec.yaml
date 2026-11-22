@@ -2,12 +2,13 @@ name: ignorium_example
 
 version: 1.0.0
 
+resolution: workspace
+
 dev_dependencies:
-  ignorium:
-    path: ".."
+  ignorium: ^1.0.0
   lintorium: ">=300.0.0"
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.10.0 <4.0.0'
 
 publish_to: none

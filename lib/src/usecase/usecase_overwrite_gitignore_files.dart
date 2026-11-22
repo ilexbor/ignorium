@@ -25,13 +25,13 @@ class OverwriteGitignoreFilesUseCase implements UseCase<void> {
     GitignoreRuleSetResolver? ruleSetResolver,
     GitignoreBufferSerializer? serializer,
     TriggerFinder? triggerFinder,
-  })  : _directoryFinder = directoryFinder ?? GitignoreDirectoryFinder(),
-        _fileReader = fileReader ?? GitignoreFileReader(deserializer: deserializer),
-        _fileWriter = fileWriter ?? GitignoreFileWriter(serializer: serializer),
-        _recursive = recursive,
-        _ruleSetResolver = ruleSetResolver ?? GitignoreRuleSetResolver(),
-        _searchDirectory = searchDirectory,
-        _triggerFinder = triggerFinder ?? const TriggerFinder();
+  }) : _directoryFinder = directoryFinder ?? GitignoreDirectoryFinder(),
+       _fileReader = fileReader ?? GitignoreFileReader(deserializer: deserializer),
+       _fileWriter = fileWriter ?? GitignoreFileWriter(serializer: serializer),
+       _recursive = recursive,
+       _ruleSetResolver = ruleSetResolver ?? GitignoreRuleSetResolver(),
+       _searchDirectory = searchDirectory,
+       _triggerFinder = triggerFinder ?? const TriggerFinder();
 
   final GitignoreDirectoryFinder _directoryFinder;
   final GitignoreFileReader _fileReader;
@@ -43,10 +43,7 @@ class OverwriteGitignoreFilesUseCase implements UseCase<void> {
 
   @override
   Future<void> call() async {
-    final triggers = await _triggerFinder.call(
-      directory: _searchDirectory,
-      recursive: _recursive,
-    );
+    final triggers = await _triggerFinder.call(directory: _searchDirectory, recursive: _recursive);
 
     final directoryToTriggerMap = await _directoryFinder.call(triggers);
 

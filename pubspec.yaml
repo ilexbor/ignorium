@@ -1,6 +1,6 @@
 name: ignorium
 
-version: 1.0.0
+version: 1.1.0
 
 license: 'BSD-3-Clause'
 
@@ -23,10 +23,13 @@ dependencies:
 
 dev_dependencies:
   lintorium: ">=300.0.0"
-  melos: ^6.3.3
+  pana: "^0.23.19"
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.10.0 <4.0.0'
+
+workspace:
+  - example
 
 platforms:
   android:

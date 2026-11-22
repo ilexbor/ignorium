@@ -1,4 +1,4 @@
-part of '../gitignore/gitignore_ruleset.dart';
+part of 'gitignore_ruleset.dart';
 
 class JetBrainsIdeGitignoreRuleSet extends GitignoreRuleSet {
   const JetBrainsIdeGitignoreRuleSet() : super(_section, _rules);

@@ -16,9 +16,7 @@ class GitignoreRuleSetResolver {
   }
 
   Iterable<GitignoreRuleSet> _resolveRuleSetsForPlatform() {
-    return [
-      if (Platform.isMacOS) const MacOsGitignoreRuleSet(),
-    ];
+    return [if (Platform.isMacOS) const MacOsGitignoreRuleSet()];
   }
 
   Iterable<GitignoreRuleSet> _resolveRuleSetsForTriggers(Iterable<Trigger> triggers) {
@@ -32,14 +30,9 @@ class GitignoreRuleSetResolver {
       return false;
     });
 
-    final ruleSets = pairs.expand(
-      (pair) {
-        return [
-          ..._resolveRuleSetsForTriggerPair(pair.$1, pair.$2),
-          ..._resolveRuleSetsForTriggerPair(pair.$2, pair.$1),
-        ];
-      },
-    ).toSet();
+    final ruleSets = pairs.expand((pair) {
+      return [..._resolveRuleSetsForTriggerPair(pair.$1, pair.$2), ..._resolveRuleSetsForTriggerPair(pair.$2, pair.$1)];
+    }).toSet();
 
     for (final trigger in triggers) {
       ruleSets.addAll(_resolveRuleSetsForTrigger(trigger));
@@ -56,88 +49,35 @@ class GitignoreRuleSetResolver {
 
   Iterable<GitignoreRuleSet> _resolveRuleSetsForTrigger(Trigger trigger) {
     return switch (trigger) {
-      TriggerAndroidKeyStoreFile() => [
-          const AndroidKeystoreFileGitignoreRuleSet(),
-        ],
-      TriggerAndroidManifestFile() => [
-          const AndroidAppProjectGitignoreRuleSet(),
-        ],
-      TriggerCocoaPodsLockFile() => [
-          const CocoaPodsGitignoreRuleSet(),
-        ],
-      TriggerCocoaPodsPodFile() => [
-          const CocoaPodsGitignoreRuleSet(),
-        ],
-      TriggerDartGeneratedFile() => [
-          const DartGeneratedFilesGitignoreRuleSet(),
-        ],
-      TriggerDartVersionManagerDvmDirectory() => [
-          const DartVersionManagerGitignoreRuleSet(),
-        ],
-      TriggerFirebaseJsonFile() => [
-          const FirebaseGitignoreRuleSet(),
-        ],
-      TriggerFirebaseRcFile() => [
-          const FirebaseGitignoreRuleSet(),
-        ],
-      TriggerFlutterGeneratedPluginRegistrantAndroidFile() => [
-          const FlutterAndroidAppProjectGitignoreRuleSet(),
-        ],
-      TriggerFlutterGeneratedPluginRegistrantIosFile() => [
-          const FlutterIosAppProjectGitignoreRuleSet(),
-        ],
-      TriggerFlutterProjectAndroidDirectory() => [
-          const FlutterAndroidAppProjectGitignoreRuleSet(),
-        ],
-      TriggerFlutterProjectIosDirectory() => [
-          const FlutterIosAppProjectGitignoreRuleSet(),
-        ],
-      TriggerFlutterVersionManagerFvmDirectory() => [
-          const FlutterVersionManagerGitignoreRuleSet(),
-        ],
-      TriggerFlutterVersionManagerFvmrcFile() => [
-          const FlutterVersionManagerGitignoreRuleSet(),
-        ],
-      TriggerGoogleServicesInfoPlistFile() => [
-          const GoogleServicesGitignoreRuleSet(),
-        ],
-      TriggerGoogleServicesJsonFile() => [
-          const GoogleServicesGitignoreRuleSet(),
-        ],
-      TriggerGradleBuildFile() => [
-          const GradleModuleProjectGitignoreRuleSet(),
-        ],
-      TriggerGradleSettingsFile() => [
-          const GradleRootProjectGitignoreRuleSet(),
-        ],
+      TriggerAndroidKeyStoreFile() => [const AndroidKeystoreFileGitignoreRuleSet()],
+      TriggerAndroidManifestFile() => [const AndroidAppProjectGitignoreRuleSet()],
+      TriggerCocoaPodsLockFile() => [const CocoaPodsGitignoreRuleSet()],
+      TriggerCocoaPodsPodFile() => [const CocoaPodsGitignoreRuleSet()],
+      TriggerDartGeneratedFile() => [const DartGeneratedFilesGitignoreRuleSet()],
+      TriggerDartVersionManagerDvmDirectory() => [const DartVersionManagerGitignoreRuleSet()],
+      TriggerFirebaseJsonFile() => [const FirebaseGitignoreRuleSet()],
+      TriggerFirebaseRcFile() => [const FirebaseGitignoreRuleSet()],
+      TriggerFlutterGeneratedPluginRegistrantAndroidFile() => [const FlutterAndroidAppProjectGitignoreRuleSet()],
+      TriggerFlutterGeneratedPluginRegistrantIosFile() => [const FlutterIosAppProjectGitignoreRuleSet()],
+      TriggerFlutterProjectAndroidDirectory() => [const FlutterAndroidAppProjectGitignoreRuleSet()],
+      TriggerFlutterProjectIosDirectory() => [const FlutterIosAppProjectGitignoreRuleSet()],
+      TriggerFlutterVersionManagerFvmDirectory() => [const FlutterVersionManagerGitignoreRuleSet()],
+      TriggerFlutterVersionManagerFvmrcFile() => [const FlutterVersionManagerGitignoreRuleSet()],
+      TriggerGoogleServicesInfoPlistFile() => [const GoogleServicesGitignoreRuleSet()],
+      TriggerGoogleServicesJsonFile() => [const GoogleServicesGitignoreRuleSet()],
+      TriggerGradleBuildFile() => [const GradleModuleProjectGitignoreRuleSet()],
+      TriggerGradleSettingsFile() => [const GradleRootProjectGitignoreRuleSet()],
       TriggerIntlUtilsIntlDirectory() => [], // TODO(ilexbor): Add RuleSet
       TriggerIntlUtilsL10nFile() => [], // TODO(ilexbor): Add RuleSet
-      TriggerJetBrainsIdeIdeaDirectory() => [
-          const JetBrainsIdeGitignoreRuleSet(),
-        ],
-      TriggerLocalPropertiesFile() => [
-          const LocalPropertiesGitignoreRuleSet(),
-        ],
+      TriggerJetBrainsIdeIdeaDirectory() => [const JetBrainsIdeGitignoreRuleSet()],
+      TriggerLocalPropertiesFile() => [const LocalPropertiesGitignoreRuleSet()],
       TriggerProductionEnvFile() => [], // TODO(ilexbor): Add RuleSet
-      TriggerPubspecFile() => [
-          const DartProjectGitignoreRuleSet(),
-        ],
-      TriggerPubspecFileWithBuildRunnerDependency() => [
-          const DartGeneratedFilesGitignoreRuleSet(),
-        ],
-      TriggerPubspecFileWithFlutterDependency() => [
-          const DartProjectGitignoreRuleSet(),
-          const FlutterRootProjectGitignoreRuleSet(),
-        ],
-      TriggerVitePressDirectory() => [
-          const VitePressGitignoreRuleSet(),
-        ],
-      TriggerXcodeXcodeprojDirectory() => [
-          const XcodeProjectGitignoreRuleSet(),
-        ],
-      TriggerXcodeXcworkspaceDirectory() => [
-          const XcodeWorkspaceGitignoreRuleSet(),
-        ],
+      TriggerPubspecFile() => [const DartProjectGitignoreRuleSet()],
+      TriggerPubspecFileWithBuildRunnerDependency() => [const DartGeneratedFilesGitignoreRuleSet()],
+      TriggerPubspecFileWithFlutterDependency() => [const DartProjectGitignoreRuleSet(), const FlutterRootProjectGitignoreRuleSet()],
+      TriggerVitePressDirectory() => [const VitePressGitignoreRuleSet()],
+      TriggerXcodeXcodeprojDirectory() => [const XcodeProjectGitignoreRuleSet()],
+      TriggerXcodeXcworkspaceDirectory() => [const XcodeWorkspaceGitignoreRuleSet()],
     };
   }
 
